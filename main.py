@@ -1,10 +1,15 @@
 from bots.simple_bot import SimpleBot
 from bots.user_bot import UserBot
+from bots.greedy_bot import GreedyBot
 from game.preferans_game import PreferansGame, Suit
 
-if __name__ == "__main__":
+def start_burgalar_game():
     player_1 = UserBot("Player1")
-    bots = [player_1, SimpleBot("Bot2"), SimpleBot("Bot3")]
-    trump_suit = Suit.HEARTS  # Example trump suit
-    game = PreferansGame(bots, trump_suit)
-    game.play_game()
+    bots = [GreedyBot("GreedyBot1"), SimpleBot("Bot2"), SimpleBot("Bot3")]
+    game = PreferansGame(bots)
+    game.start_game()
+
+
+
+if __name__ == "__main__":
+    start_burgalar_game()

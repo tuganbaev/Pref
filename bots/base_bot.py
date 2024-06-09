@@ -37,8 +37,7 @@ class BaseBot:
         print(f"{self.name}'s hand: {hand_str}")
 
     def make_bid(self):
-        # Default implementation, to be overridden if needed
-        return 0
+        return "6-1"  # Default placeholder
 
     def play_card(self, trick, legal_cards):
         # Default implementation, to be overridden
