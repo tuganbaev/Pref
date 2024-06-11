@@ -1,11 +1,12 @@
 from .base_bot import BaseBot
+from game.card import Suit
 
 class UserBot(BaseBot):
     def sort_hand(self):
         #Default sorting is to sort by suit and rank. Suit order is Spades, Clubs, Diamonds, Hearts. Rank order is Ace, King, Queen, Jack, 10, 9, 8, 7.
         super().sort_hand()
 
-    def make_bid(self):
+    def make_bid(self, hand):
         # Placeholder method for bidding, should be overridden
         return "6-1"  # Default placeholder
     
@@ -13,7 +14,7 @@ class UserBot(BaseBot):
         print("Your hand:", hand)
         trump = input("Choose trump suit (Spades, Hearts, Diamonds, Clubs): ")
         num_tricks = int(input("How many tricks do you call (6-10)?: "))
-        return Suit[trump.upper()], num_tricks
+        return num_tricks, Suit[trump.upper()]
 
     def play_card(self, trick, legal_cards, hand = None):
         print(f"\nTrick: {trick}")

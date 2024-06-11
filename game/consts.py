@@ -1,0 +1,31 @@
+from .card import Card, Suit, Rank
+
+GAME_MAP = {
+    1 : (6, Suit.SPADES),
+    2 : (6, Suit.CLUBS),
+    3 : (6, Suit.DIAMONDS),
+    4 : (6, Suit.HEARTS),
+    5 : (6, None),
+    6 : (7, Suit.SPADES),
+    7 : (7, Suit.CLUBS),
+    8 : (7, Suit.DIAMONDS),
+    9 : (7, Suit.HEARTS),
+    10 : (7, None),
+    11 : (8, Suit.SPADES),
+    12 : (8, Suit.CLUBS),
+    13 : (8, Suit.DIAMONDS),
+    14 : (8, Suit.HEARTS),
+    15 : (8, None),
+    16 : (9, Suit.SPADES),
+    17 : (9, Suit.CLUBS),
+    18 : (9, Suit.DIAMONDS),
+    19 : (9, Suit.HEARTS),
+    20 : (9, None),
+    21 : (10, Suit.SPADES),
+    22 : (10, Suit.CLUBS),
+    23 : (10, Suit.DIAMONDS),
+    24 : (10, Suit.HEARTS),
+    25 : (10, None),
+    26 : 'mizer',
+}
+

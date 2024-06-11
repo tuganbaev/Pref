@@ -5,6 +5,13 @@ class BaseBot:
         self.name = name
         self.hand = []
 
+    def make_bid(self, hand):
+        raise NotImplementedError("This method should be implemented by subclasses.")
+
+    def choose_contract(self, hand):
+        raise NotImplementedError("This method should be implemented by subclasses.")
+
+
     def receive_hand(self, hand):
         self.hand = hand
         self.sort_hand()
