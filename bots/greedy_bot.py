@@ -21,7 +21,7 @@ class GreedyBot(BaseBot):
         most_common_suit, _ = suit_strength.most_common(1)[0]
         return (6, most_common_suit)  # Choose to play 6 tricks with the most common suit
 
-    def play_card(self, trick, legal_cards, hand = None):
+    def play_card(self, trick, legal_cards, contract_id, trump_suit, previous_tricks):
         # Define a ranking system based on Preferans rules
         rank_values = {
             Rank.SEVEN: 0,
@@ -36,4 +36,9 @@ class GreedyBot(BaseBot):
 
         legal_cards.sort(key=lambda card: -rank_values[card.rank])
         return legal_cards[0]
+    
+    def choose_cards_to_discard(self, hand, prikiup):
+        combined_hand = hand + prikiup
+        self.hand = combined_hand[2:]
+        return combined_hand[:2] # Discard the first two cards
     

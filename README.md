@@ -20,3 +20,8 @@ What things you need to install the software and how to install them:
 ```bash
 python>=3.6
 ```
+
+## TODO
+- Кто вистует?
+- Распасы повышение торговли
+- Игра в открытую?

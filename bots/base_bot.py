@@ -10,7 +10,12 @@ class BaseBot:
 
     def choose_contract(self, hand):
         raise NotImplementedError("This method should be implemented by subclasses.")
+    
+    def choose_cards_to_discard(self, hand, prikiup): #12 cards passed to the bot
+        raise NotImplementedError("This method should be implemented by subclasses.")
 
+    def become_vistuz(self, hand, contract_id, players_status):
+        raise NotImplementedError("This method should be implemented by subclasses.")
 
     def receive_hand(self, hand):
         self.hand = hand
@@ -43,12 +48,7 @@ class BaseBot:
         hand_str = ", ".join(map(str, self.hand))
         print(f"{self.name}'s hand: {hand_str}")
 
-    def make_bid(self):
-        return "6-1"  # Default placeholder
-
-    def play_card(self, trick, legal_cards):
-        # Default implementation, to be overridden
-        # For example, just play the first legal card
+    def play_card(self, trick, legal_cards, contract_id, trump_suit, previous_tricks):
         if legal_cards:
             return legal_cards[0]
         raise ValueError("No legal cards to play.")
